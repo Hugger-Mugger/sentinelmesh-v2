@@ -116,6 +116,23 @@ Security Analyst • Protocol Defender in the Making
 
 ---
 
+## 🔭 Future Plans
+
+- 🧠 Expand the triage engine with scoring, clustering, and ML-based alert prioritization  
+- 🔌 Build plug-and-play integrations with incident tooling (PagerDuty, Slack, Notion SOC boards)  
+- 🔐 Add support for multiple on-chain response profiles (multi-chain contract libraries, role revocation)  
+- 🌐 Roll out REST API or GraphQL layer for external alert injection and system introspection  
+- 📦 Publish SentinelMesh as a PyPI module for simulation tooling  
+- 👥 Create example replay kits using historic exploits for SOC team training  
+- 🧪 Migrate to full test coverage with container mocks and scenario-driven unit tests  
+- 📈 Add time-series metrics on triage performance, alert flow rate, and playbook efficiency  
+- 🛡️ Harden security posture with signing, secrets encryption, and repo audit checklist  
+- 📚 Publish a whitepaper explaining architecture design decisions, threat model, and future roadmap
+
+> Got a use case worth defending against? Open a proposal or challenge the framework design. Let's battle-test before production pressure arrives.
+
+---
+
 ## 🦾 Contributing
 
 Got ideas? Want to battle-test use cases? Open a discussion, raise an issue, or just drop by and say hi.  
