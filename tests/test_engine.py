@@ -1,20 +1,21 @@
-import sys
-import os
-import json
-import pytest
+import sys, os, json
 from pathlib import Path
+import pytest
 
-# Add playbook-engine directory to Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../playbook-engine")))
+from engine import process_alert_file
 
-from engine import run_playbook
+def test_process_alert_file(tmp_path, capfd):
+    # Create a mock alert file
+    alert_data = {"type": "high_gas", "details": "unit test triggered"}
+    alert_file = tmp_path / "incoming_alert.json"
+    alert_file.write_text(json.dumps(alert_data))
 
-def test_run_playbook_prints(capfd):
-    alert = {
-        "type": "high_gas",
-        "details": "unit test triggered"
-    }
-    run_playbook(alert)
+    # Run the processor
+    result = process_alert_file(alert_file)
+
+    # Capture output
     out, _ = capfd.readouterr()
     assert "Responding to high_gas" in out
-
+    assert result == alert_data
+    assert not alert_file.exists()
