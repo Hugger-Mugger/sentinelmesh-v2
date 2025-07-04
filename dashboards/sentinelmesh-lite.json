@@ -1,0 +1,17 @@
+{
+  "dashboard": {
+    "title": "SentinelMesh Metrics",
+    "panels": [
+      {
+        "title": "Alert Volume (Mocked)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "alerts_total",
+            "format": "time_series"
+          }
+        ]
+      }
+    ]
+  }
+}

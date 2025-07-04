@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  detector:
+    build: ./forta-bots/detector
+    volumes:
+      - ./shared:/app/shared
+    environment:
+      - USE_FORTE_API=false
+      - FORTA_API_URL=${FORTA_API_URL}
+      - FORTA_API_KEY=${FORTA_API_KEY}
+
+  dispatcher:
+    build: ./alert-bridge
+    depends_on:
+      - detector
+    volumes:
+      - ./shared:/app/shared
+
+  playbook-engine:
+    build: ./playbook-engine
+    depends_on:
+      - dispatcher
+    volumes:
+      - ./shared:/app/shared
+      - ./playbook-engine/playbooks:/app/playbooks
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./dashboards:/etc/grafana/provisioning
+
+  runbook-tester:
+    build: ./runbook-tester
+    volumes:
+      - ./shared:/app/shared
+
+  metrics-exporter:
+    build: ./metrics-exporter
+    volumes:
+      - ./metrics-exporter:/app

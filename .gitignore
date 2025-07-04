@@ -1,0 +1,22 @@
+# Bytecode and local files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.db
+*.sqlite3
+
+# Environment and config
+.env
+.env.*
+
+# Editor or OS metadata
+.DS_Store
+.vscode/
+.idea/
+
+# Docker artifacts
+*.pid
+build/
+*.tar

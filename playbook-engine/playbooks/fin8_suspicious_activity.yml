@@ -1,0 +1,9 @@
+playbook:
+  id: fin8-anomaly-response
+  trigger_condition:
+    type: high_gas
+  steps:
+    - action: Notify
+      message: "FIN8-like anomaly detected on 0xabc..."
+    - action: Archive
+      path: /archive/high_gas/

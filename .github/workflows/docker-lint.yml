@@ -1,0 +1,28 @@
+name: Docker Lint & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  docker-compose-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build all services
+        run: docker-compose build
+
+  python-unit-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: playbook-engine
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install pytest
+        run: pip install pytest
+      - name: Run engine test
+        run: pytest ../tests/test_engine.py
