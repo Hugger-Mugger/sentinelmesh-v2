@@ -101,7 +101,7 @@ python -m pytest tests/test_engine.py -v
 
 **Abhijeet Kumar**  
 Security Analyst • Protocol Defender in the Making  
-[LinkedIn](https://www.linkedin.com/in/abhijeet-kumar) • Email: abhijeet@example.com
+[LinkedIn](https://www.linkedin.com/in/abhijeet-kumar0412/) • Email: abhijeetkumar20011204@outlook.com
 
 ---
 
