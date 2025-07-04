@@ -127,7 +127,6 @@ Security Analyst • Protocol Defender in the Making
 - 🧪 Migrate to full test coverage with container mocks and scenario-driven unit tests  
 - 📈 Add time-series metrics on triage performance, alert flow rate, and playbook efficiency  
 - 🛡️ Harden security posture with signing, secrets encryption, and repo audit checklist  
-- 📚 Publish a whitepaper explaining architecture design decisions, threat model, and future roadmap
 
 > Got a use case worth defending against? Open a proposal or challenge the framework design. Let's battle-test before production pressure arrives.
 
